@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#welcomeBanner {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.special-offer {
+  color: red;
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.img-border {
+  border: 2px solid #333;
+  width: 150px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+video {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin-top: 20px;
+}

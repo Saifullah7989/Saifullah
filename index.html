@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="i.css">
+  <script src="i.js" defer></script>
+</head>
+<body onbeforeunload="return warnUser()">
+
+<nav>
+  <a href="#home">Home</a> |
+  <a href="#events">Events</a> |
+  <a href="#contact">Contact</a> |
+  <a href="help.html" target="_blank">Help</a>
+</nav>
+
+<section id="home">
+  <div id="welcomeBanner">
+    Welcome, User! <span class="special-offer">Special Offer!</span>
+  </div>
+</section>
+
+<section id="events">
+  <h2 class="highlight">Upcoming Events</h2>
+  <table>
+    <caption>Past Event Highlights</caption>
+    <tr>
+      <td><img src="https://static.vecteezy.com/system/resources/previews/029/094/840/non_2x/local-market-or-street-fair-flat-illustration-outdoor-market-stalls-with-crowd-of-people-vector.jpg" alt="Community Fair" title="Community Fair" class="img-border"></td>
+      <td><img src="C:\Users\USER\Downloads\fest.jpg" alt="Music Fest" title="Music Fest" class="img-border"></td>
+      <td><img src="C:\Users\USER\Downloads\clean.jpg"alt="Clean-up Drive" title="Clean-up Drive" class="img-border" ondblclick="enlarge(this)"></td>
+    </tr>
+    <tr>
+      <td><img src="C:\Users\USER\Downloads\walk.webp" alt="Charity Walk" title="Charity Walk" class="img-border"></td>
+      <td><img src="C:\Users\USER\Downloads\food.avif"alt="Food Festival" title="Food Festival" class="img-border"></td>
+      <td><img src="C:\Users\USER\Downloads\fair.jpeg" alt="Book Fair" title="Book Fair" class="img-border"></td>
+    </tr>
+  </table>
+
+  <form id="eventForm" onsubmit="submitForm(); return false;">
+    <label>Name: <input type="text" name="name" placeholder="Your name" required autofocus></label><br>
+    <label>Email: <input type="email" name="email" placeholder="your@email.com" required></label><br>
+    <label>Date: <input type="date" name="eventDate" required></label><br>
+    <label>Phone: <input type="tel" id="phone" onblur="validatePhone(this)" required></label><br>
+    <label>Event Type:
+      <select id="eventType" onchange="showFee(this.value)">
+        <option value="music">Music</option>
+        <option value="clean-up">Clean-up</option>
+        <option value="tech">Tech Talk</option>
+      </select>
+    </label><br>
+    <div id="feeDisplay"></div>
+    <label>Message:
+      <textarea id="feedback" onkeyup="countChars()" rows="4" cols="40"></textarea>
+    </label><br>
+    <div id="charCount"></div>
+    <button type="submit" onclick="showConfirmation()">Register</button>
+    <output id="outputMsg"></output>
+  </form>
+
+  <button onclick="findLocation()">Find Nearby Events</button>
+  <div id="location"></div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+</section>
+
+<video controls oncanplay="videoReady()">
+  <source src="https://videos.pexels.com/video-files/3150400/3150400-uhd_2732_1440_25fps.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div id="videoStatus"></div>
+
+<button onclick="clearPreferences()">Clear Preferences</button>
+
+</body>
+</html>
